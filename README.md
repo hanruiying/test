@@ -68,7 +68,7 @@ bubbleSort(myArr);
 
 ```js
 function quickSort(arr) {
-  if (arr.length <= 1) return;
+  if (arr.length <= 1) return arr;
 
   //取数组最接近中间的数位基准，奇数与偶数取值不同，但不印象，当然，你可以选取第一个，或者最后一个数为基准，这里不作过多描述
   var pivotIndex = Math.floor(arr.length / 2);
@@ -92,7 +92,7 @@ function quickSort(arr) {
   //这里使用concat操作符，将左区间，基准，右区间拼接为一个新数组
   //然后递归1，2步骤，直至所有无序区间都 只剩下一个元素 ，递归结束
   return quickSort(left).concat([pivot], quickSort(right));
-
+ }
   var arr = [14, 3, 15, 7, 2, 76, 11];
   console.log(quickSort(arr));
   /*
